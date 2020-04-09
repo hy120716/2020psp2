@@ -10,7 +10,7 @@ int main(void)
 {
     double val;
     char fname[FILENAME_MAX];
-    char buf[256];
+    char buf[300];
     FILE* fp;
 
     printf("input the filename of sample:");
