@@ -12,6 +12,7 @@ int main(void)
     char fname[FILENAME_MAX];
     char buf[300];
     FILE* fp;
+    int n=1;
 
     printf("input the filename of sample:");
     fgets(fname,sizeof(fname),stdin);
@@ -26,6 +27,8 @@ int main(void)
 
     while(fgets(buf,sizeof(buf),fp) != NULL){
         sscanf(buf,"%lf",&val);
+         ave_online(val,ave);
+         n=n+1;
 
 
     
@@ -39,9 +42,20 @@ int main(void)
         exit(EXIT_FAILURE);
     }
 
+    printf("Average: %f\n",ave);
 
     return 0;
 
 
 }
 
+double ave_online(double val,double ave)
+{  int n;
+   if(n==1){
+       ave=val;
+   }
+   else{
+       ave={{(n-1)*ave}+ val}/n;
+       }
+}
+   
