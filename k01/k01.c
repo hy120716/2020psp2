@@ -9,9 +9,9 @@ extern double var_online(double val,double ave,double _2ave);
 
 int main(void)
 {
-    double val,ave=0,var=0,_2ave=0,s_var;
+    double val,ave=0,var=0,_2ave=0;
     char fname[FILENAME_MAX];
-    char buf[300];
+    char buf[256];
     FILE* fp;
 
     printf("input the filename of sample:");
@@ -28,11 +28,11 @@ int main(void)
     while(fgets(buf,sizeof(buf),fp) != NULL){
         sscanf(buf,"%lf",&val);
          
+         var=var_online(val,ave,_2ave);
          ave=ave_online(val,ave);
          _2ave=ave_online(pow(val,2),_2ave);
-         var=var_online(val,ave,_2ave);
-
-         s_var=(n/(n-1))*var;
+        
+        
          n++;
         
         }
@@ -46,7 +46,7 @@ int main(void)
     printf("Varience: %f\n",var);
 
     printf("suitei_Average: %f\n",ave);
-    printf("suitei_Varience: %f\n",s_var);
+    printf("suitei_Varience: %f\n",(n/(n-1))*var);
     
 
     return 0;
@@ -61,6 +61,6 @@ extern double ave_online(double val,double ave)
 }
 extern double var_online(double val,double ave,double _2ave)
 {   double var;
-    var=((n-1)*_2ave)/n + pow(val,2) - pow(((n-1)*ave)/n + val/n,2);
+    var=((n-1)*_2ave)/n + pow(val,2)/n - pow(((n-1)*ave)/n + val/n,2);
     return var;
 }
