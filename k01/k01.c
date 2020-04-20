@@ -9,7 +9,7 @@ extern double var_online(double val,double ave,double _2ave);
 
 int main(void)
 {
-    double val,ave=0,var=0,_2ave=0;
+    double val,ave=0,var=0,_2ave=0,s_var;
     char fname[FILENAME_MAX];
     char buf[256];
     FILE* fp;
@@ -32,7 +32,8 @@ int main(void)
          ave=ave_online(val,ave);
          _2ave=ave_online(pow(val,2),_2ave);
         
-        
+         s_var=(n/(n-1))*var;
+
          n++;
         
         }
@@ -46,7 +47,7 @@ int main(void)
     printf("Varience: %f\n",var);
 
     printf("suitei_Average: %f\n",ave);
-    printf("suitei_Varience: %f\n",(n/(n-1))*var);
+    printf("suitei_Varience: %f\n",s_var);
     
 
     return 0;
