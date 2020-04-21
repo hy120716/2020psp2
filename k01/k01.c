@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-
-int n=1;
+ double n=0;
 extern double ave_online(double val,double ave);
 extern double var_online(double val,double ave,double _2ave);
 
@@ -28,13 +27,12 @@ int main(void)
     while(fgets(buf,sizeof(buf),fp) != NULL){
         sscanf(buf,"%lf",&val);
          
+        n=n+1;
+
          var=var_online(val,ave,_2ave);
          ave=ave_online(val,ave);
          _2ave=ave_online(pow(val,2),_2ave);
         
-         s_var=(n/(n-1))*var;
-
-         n++;
         
         }
 
@@ -43,11 +41,14 @@ int main(void)
         exit(EXIT_FAILURE);
     }
 
+    printf("%f\n",n);
+    s_var=(n/(n-1))*var;
+    
     printf("Average: %f\n",ave);
-    printf("Varience: %f\n",var);
+    printf("Var: %f\n",var);
 
     printf("suitei_Average: %f\n",ave);
-    printf("suitei_Varience: %f\n",s_var);
+    printf("suitei_Var: %f\n",s_var);
     
 
     return 0;
@@ -56,9 +57,10 @@ int main(void)
 }
 
 extern double ave_online(double val,double ave)
-{   ave=((n-1)*ave)/n + val /n ;
+{   double average;
+    average=((n-1)*ave)/n + val /n ;
        
-    return ave;
+    return average;
 }
 extern double var_online(double val,double ave,double _2ave)
 {   double var;
