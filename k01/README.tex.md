@@ -66,6 +66,17 @@ l.59:関数ave_onlineの中身
 
 l.65:関数var_onlineの中身
 
+## 入出力結果
+
+```
+input the filename of sample:../sample/heights_male.csv
+the filename of sample: ../sample/heights_male.csv
+sample mean：
+sample variance：
+population mean (estimated)：
+population variance (estimated)：
+```
+
 ## 修正履歴
 
 - プロトタイプ宣言にはexternをつけますが，関数本体のほうにはつけません．
