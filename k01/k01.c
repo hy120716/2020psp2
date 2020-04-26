@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
- double n=0;
+double n;
 extern double ave_online(double val,double ave);
 extern double var_online(double val,double ave,double _2ave);
 
@@ -56,13 +56,13 @@ int main(void)
 
 }
 
-extern double ave_online(double val,double ave)
+double ave_online(double val,double ave)
 {   double average;
     average=((n-1)*ave)/n + val /n ;
        
     return average;
 }
-extern double var_online(double val,double ave,double _2ave)
+double var_online(double val,double ave,double _2ave)
 {   double var;
     var=((n-1)*_2ave)/n + pow(val,2)/n - pow(((n-1)*ave)/n + val/n,2);
     return var;
