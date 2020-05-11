@@ -83,9 +83,16 @@ l.65:関数var_onlineの中身
 input the filename of sample:../sample/heights_male.csv
 the filename of sample: ../sample/heights_male.csv
 sample mean：
-sample variance：
+sample variance:
 population mean (estimated)：
 population variance (estimated)：
+
+input the filename of sample:../sample/heights_male.csv
+the filename of sample: ../sample/heights_male.csv
+Average: 173.888750
+Var: 25.361711
+suitei_Average: 173.888750
+suitei_Var: 28.984813
 ```
 
 ## 修正履歴
