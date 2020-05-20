@@ -8,7 +8,7 @@
 #include <time.h>
 #define RAND_SEED ((unsigned) time(NULL))
 #endif
-
+int n;
 extern double r_unif(void);
 extern double r_stdnorm(void);
 
