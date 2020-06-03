@@ -66,6 +66,17 @@ int main(int argc, char* argv[])
 
 
 ## ソースコードの説明
+l.23: muの値を読み込む
+
+l.24: sigmaの値を読み込む
+
+l.25: num_dummyの値を読み込む
+
+l.30~34: 読み込んだmu,sigma,num_dummyを出力
+
+l.37~42: 標準正規乱数は平均0,分散1なので、この値にsigmaをかけてmuを足すことで、平均mu,分散sigma^2に従うdummyを作り出力することを、num_dummy回繰り返す
+
+l.47~: 関数の中身
 
 ## 入出力結果
 
@@ -86,6 +97,17 @@ Num of dummy data: 5
 
 コンパイル時に`-DCONST_SEED`をつけない場合を以下に示す．
 
+PS C:\Users\bb35319031\プログラミング\2020psp2\k03> ./k03.exe 170.8 5.43 5
+============================================
+template mean: 170.8
+template standard deviation: 5.43
+Num of dummy data: 5
+============================================
+176.18
+161.22
+177.30
+175.56
+175.34
 
 
 ## 修正履歴
