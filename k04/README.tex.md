@@ -1,6 +1,6 @@
 # 課題4 レポート
 
-aa83988848 薗田光太郎
+bb35319031 橋口裕太
 
 ## 課題
 
@@ -11,7 +11,15 @@ aa83988848 薗田光太郎
 この二つのファイルを読み取り，学籍番号，身長，性別の3つをメンバーとする構造体の配列で管理するとよい．
 
 ## ソースコードの説明
+l.6:ID,性別、身長の構造体sampleを宣言。，
 
+l.25~50:性別、身長の入ったファイルからデータを読み込み、構造体の　　　　中のgender,heightsに格納。
+
+l.53~72:IDの入ったファイルからデータを読み込み、構造体の中のIDに　　　　格納。
+
+l.80~97:欲しいIDを聞き、それが構造体sampleにあればそのIDと性　　　　　別、身長を出力。
+
+l.100:なければ"No data"と出力。
 
 ## 入出力結果
 
@@ -36,6 +44,29 @@ Which ID's data do you want? : 45313124
 ---
 No data
 ```
+```
+PS C:\Users\bb35319031\プログラミング\2020psp2\k04> gcc k04.c -o k04.exe
+PS C:\Users\bb35319031\プログラミング\2020psp2\k04> ./k04.exe
+input the filename of sample heights ?:../sample/heights.csv
+the filename of sample heights: ../sample/heights.csv
+input the filename of sample ID ?:../sample/IDs.csv
+the filename of sample ID: ../sample/IDs.csv
+Which ID's data do you want? : 45313125
+---
+ID : 45313125
+gender : Female
+heights : 152.40
+```
+```
+input the filename of sample heights ?:../sample/heights.csv
+the filename of sample heights: ../sample/heights.csv
+input the filename of sample ID ?:../sample/IDs.csv
+the filename of sample ID: ../sample/IDs.csv
+Which ID's data do you want? : 45313124
+---
+No data
+```
+
 
 ## 修正履歴
 
