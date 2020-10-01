@@ -4,7 +4,7 @@
 #include <math.h>
 
 extern void get_bound(int num_male, int num_whole, double* lower_bound, double* upper_bound);
-extern int choose(int n, int r);
+extern int choose(int n, int r  );
 
 int main(void)
 {
